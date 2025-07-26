@@ -1,0 +1,129 @@
+:root {
+  --primary-color: #3498db;  /* Bright blue */
+  --secondary-color: #2ecc71;  /* Vibrant green */
+  --accent-color: #9b59b6;  /* Purple */
+  --background-color: #f5f6fa;  /* Light grayish blue */
+  --card-background: #ffffff;  /* White */
+  --text-color: #34495e;  /* Dark grayish blue */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.board {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.column {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: var(--card-background);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.column::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+}
+
+.column h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: var(--card-background);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.card-text {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-update {
+  font-size: 0.8em;
+  color: #777;
+}
+
+.card button {
+  flex-shrink: 0;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.add-card-form {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.add-card-form input {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-right: 10px;
+  width: 300px;
+}
+
+.add-card-form button {
+  font-size: 16px;
+}
+
+.move-back-button {
+  background-color: #f0f0f0;
+  color: #666;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+.move-back-button:hover {
+  background-color: #e0e0e0;
+}
